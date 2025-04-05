@@ -25,23 +25,21 @@ class Form
         int                getGradeToSign() const;
         int                getGradeToExecute() const;
         //besigned
-        void               beSigned(Bureaucrat &bureaucrat);
+        void               beSigned(Bureaucrat const &bureaucrat);
         // exception class
         class GradeTooLowException : public std::exception
         {
-            public:
-                virtual const char *what() const throw()
-                {
-                    return ("Form : Grade is too low!");
-                }
+            virtual const char *what() const throw()
+            {
+                return ("Form : Grade is too low!");
+            }
         };
         class GradeTooHighException : public std::exception
         {
-            public:
-                virtual const char *what() const throw()
-                {
-                    return ("Form : Grade is too high!");
-                }
+            virtual const char *what() const throw()
+            {
+                return ("Form : Grade is too high!");
+            }
         };
 };
 
